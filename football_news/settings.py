@@ -17,7 +17,8 @@ from dotenv import load_dotenv
 
 # Load environment variables from .env file
 load_dotenv()
-print("DB_PORT:", repr(os.getenv("DB_PORT")))
+print("test")
+print("testing")
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -37,7 +38,7 @@ DEBUG = True
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", "edward-jeremy41-footballnews.pbp.cs.ui.ac.id"]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://edward-jeremy41-footballnews.pbp.cs.ui.ac.id/"
+    "https://edward-jeremy41-footballnews.pbp.cs.ui.ac.id"
 ]
 # Application definition
 
