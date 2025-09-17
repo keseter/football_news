@@ -1,6 +1,7 @@
 import uuid
 from django.db import models
-
+from django.contrib.auth.models import User # Untuk supaya user bisa create dan lihat news nya sendiri tidak yagn lain
+# migrasi untuk merefleksikan perubahan tersebut
 class News(models.Model):
     CATEGORY_CHOICES = [
         ('transfer', 'Transfer'),
@@ -19,6 +20,7 @@ class News(models.Model):
     news_views = models.PositiveIntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     is_featured = models.BooleanField(default=False)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True) # menghubungkan satu news dengan satu user melalui sebuah relationship
     
     def __str__(self):
         return self.title
