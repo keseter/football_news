@@ -189,6 +189,14 @@
     article.innerHTML = cardHtml;
     return article;
 }
+  // render cards
+  function renderAllNewsCards(newsArray) {
+    newsGridContainer.innerHTML = '';
+    newsArray.forEach(item => {
+      const card = buildNewsCardElement(item);
+      newsGridContainer.appendChild(card);
+    });
+  }
 
   // Filter and display news
   function filterAndDisplayNews() {
@@ -258,10 +266,6 @@
       fetchNewsFromServer();
   });
 
-  document.getElementById("newsForm").addEventListener("submit", function(e) {
-      e.preventDefault(); //  Mencegah form melakukan submit default (reload halaman)
-      addNewsEntry(); //  untuk mengirim data via AJAX
-  })
 
 </script>
 
